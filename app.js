@@ -168,7 +168,8 @@ app.get('/admin/update/:id', function(req, res){
 
 // 删除的接口
 app.delete('/movie/delete', function(req, res){
-	// POST或者DELETE 提交的URL的参数可以通过 req.query 拿到参数
+	// DELETE 提交的URL的参数可以通过 req.query 拿到参数 /movie/delete?id=102
+	// POST 的请求可以通过 req.body 来获取所传的参数
 	var id = req.query.id;
 	if(id){
 		Movie.remove({_id: id}, function(err, result){
